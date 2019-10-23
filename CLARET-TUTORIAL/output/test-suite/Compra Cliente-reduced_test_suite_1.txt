@@ -1,0 +1,62 @@
+/**
+ *	 >>> REDUCED TEST SUITE (Greedy Heuristic - Transition Coverage) <<<
+ *
+ * - Calculated Maximum Test Case Size: 8
+ *
+ * - Equation:
+ *
+ *     maxTestCaseSize = (b + max(a, e))/2
+ * 
+ *     where:
+ *       b (Total of Basic Flow Steps): 12
+ *       a (Total of Steps from Greater Alternative Flow): 5
+ *       e (Total of Steps from Greater Exception Flow): 1
+ *
+ * - Total of Generated Test Cases: 4
+ */
+
+Test Case: 1
+Precondition: Cliente deve estar cadastrado. Cliente está logado no ifood
+Cliente seleciona restaurante a partir da lista dos últimos restaurantes onde comprou -> SYSTEM exibe a página com o menu disponível para o restaurante escolhido e os itens da última compra do cliente
+Cliente adiciona a sacola os itens de uma compra anterior -> SYSTEM indica itens da sacola não disponíveis
+Cliente adiciona a sacola os itens de uma compra anterior -> SYSTEM indica itens da sacola não disponíveis
+Cliente adiciona na sacola os itens do menu a serem adquiridos com as quantidades indicadas -> SYSTEM exibe a sacola com os itens e suas quantidades adicionados
+Cliente encerra a compra -> SYSTEM exibe a página de pagamento da compra
+Cliente escolhe pagar com cartão de crédito -> SYSTEM solicita dados do cartão de crédito
+Cliente fornece dados válidos do cartão de crédito -> SYSTEM confirma o aceite do pagamento com cartão
+Cliente confirma o pagamento com o cartão -> SYSTEM encaminha pedido ao restaurante e confirma a compra
+Postcondition: Compra registrada na lista de pedidos do cliente
+
+Test Case: 2
+Precondition: Cliente deve estar cadastrado. Cliente está logado no ifood
+Cliente seleciona restaurante a partir da lista de seus restaurantes favoritos -> SYSTEM exibe a página com o menu disponível para o restaurante escolhido e os itens da última compra do cliente
+Cliente adiciona na sacola os itens do menu a serem adquiridos com as quantidades indicadas -> SYSTEM indica itens da sacola não disponíveis
+Cliente adiciona na sacola os itens do menu a serem adquiridos com as quantidades indicadas -> SYSTEM exibe a sacola com os itens e suas quantidades adicionados
+Cliente encerra a compra -> SYSTEM exibe a página de pagamento da compra
+Cliente escolhe pagamento em dinheiro -> SYSTEM solicita informação sobre a necessidade de troco
+Cliente informa o troco necessário -> SYSTEM exibe tela para confirmação da compra
+Cliente escolhe pagar com cartão de crédito -> SYSTEM exibe tela com confirmação do cancelamento
+
+Test Case: 3
+Precondition: Cliente deve estar cadastrado. Cliente está logado no ifood
+Cliente seleciona restaurante a partir da relação geral com todos os restaurantes abertos -> SYSTEM exibe a página com o menu disponível para o restaurante escolhido e os itens da última compra do cliente
+Cliente adiciona a sacola os itens de uma compra anterior -> SYSTEM exibe a sacola com os itens e suas quantidades adicionados
+Cliente encerra a compra -> SYSTEM indica que o restaurante encontra-se fechado
+Cliente seleciona restaurante a partir da lista dos últimos restaurantes onde comprou -> SYSTEM exibe a página com o menu disponível para o restaurante escolhido e os itens da última compra do cliente
+Cliente adiciona na sacola os itens do menu a serem adquiridos com as quantidades indicadas -> SYSTEM exibe a sacola com os itens e suas quantidades adicionados
+Cliente encerra a compra -> SYSTEM exibe a página de pagamento da compra
+Cliente escolhe pagar com cartão de crédito -> SYSTEM solicita dados do cartão de crédito
+Cliente fornece dados válidos do cartão de crédito -> SYSTEM informa que pagamento com o cartão não foi autorizado
+
+Test Case: 4
+Precondition: Cliente deve estar cadastrado. Cliente está logado no ifood
+Cliente seleciona restaurante a partir da lista dos últimos restaurantes onde comprou -> SYSTEM exibe a página com o menu disponível para o restaurante escolhido e os itens da última compra do cliente
+Cliente adiciona a sacola os itens de uma compra anterior -> SYSTEM indica itens da sacola não disponíveis
+Cliente adiciona a sacola os itens de uma compra anterior -> SYSTEM indica itens da sacola não disponíveis
+Cliente adiciona a sacola os itens de uma compra anterior -> SYSTEM exibe a sacola com os itens e suas quantidades adicionados
+Cliente encerra a compra -> SYSTEM exibe a página de pagamento da compra
+Cliente escolhe pagamento em dinheiro -> SYSTEM solicita informação sobre a necessidade de troco
+Cliente informa o troco necessário -> SYSTEM exibe tela para confirmação da compra
+Cliente confirma a compra -> SYSTEM encaminha pedido ao restaurante e confirma a compra
+Postcondition: Compra registrada na lista de pedidos do cliente
+
